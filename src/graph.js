@@ -102,7 +102,7 @@ const Graph = (elem) => {
 
   }); //.enableNavigationControls(true); // false);
 
-  var texture = new THREE.TextureLoader().load("data/Image-5.jpg");
+  var texture = new THREE.TextureLoader().load("data/image-5.jpg");
   var backgroundMesh = new THREE.Mesh(
     new THREE.PlaneGeometry(200, 150, 1),
     new THREE.MeshBasicMaterial({
