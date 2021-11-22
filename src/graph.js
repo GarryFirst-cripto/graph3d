@@ -41,8 +41,6 @@ const Graph = (elem) => {
     const axisY = getAxis(camera_pivot.rotation.y, koeY * event.movementX, maxY);
     camera_pivot.rotateX(axisX - camera_pivot.rotation.x);
     camera_pivot.rotateY(axisY - camera_pivot.rotation.y);
-    console.log('scene', Graph.scene().rotation);
-    console.log('camera', Graph.camera().rotation);
     return false;
   }
 
