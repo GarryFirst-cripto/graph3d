@@ -57,8 +57,8 @@ const Graph = (elem, dagMode) => {
 
   const Graph = ForceGraph3D(); // ForceGraph3D({ controlType: 'orbit' });
   Graph(elem)
-    .width(elem.clientWidth)
-    .height(elem.clientHeight)
+    .width(elem.clientWidth - 1)
+    .height(elem.clientHeight - 1)
     .cameraPosition({ z: 800 })
     .backgroundColor('black')
     .onNodeClick(click)
