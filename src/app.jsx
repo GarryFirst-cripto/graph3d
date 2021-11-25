@@ -1,30 +1,27 @@
 import React, { useRef, useEffect } from 'react';
 import Graph from './graph';
+import Selector from './select';
 
 const App = () => {
   const inputEl = useRef(null);
-  // const [mode, setMode] = useState(true);
-  
-  // const target = document.getElementById('root');
-  // Graph(target);
+  let dagMode;
   
   useEffect(() => {
-    Graph(inputEl.current);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    dagMode = Graph(inputEl.current, 'zin');
     window.addEventListener(`resize`, event => {
-      Graph(inputEl.current);
+      dagMode = Graph(inputEl.current, 'zin');
     }, false);
   }, []);
 
-  // const onButtonClick = () => {
-  //     // `current` указывает на монтированный элемент текстового поля ввода
-  //   // inputEl.current.focus();
-  //   Graph(inputEl.current, mode);
-  // };
-  
+  const onChange = (mode) => {
+    dagMode(mode)
+  }
+
   return (
       <>
+        <Selector onchange={onChange} />
         <div ref={inputEl} style={{ position: 'absolute', top: '0', left: '0', width: '100vw', height: '100hw' }} />
-        {/* <button onClick={onButtonClick}>Фокус</button> */}
       </>
   );
 }
